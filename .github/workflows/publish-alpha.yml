@@ -1,4 +1,4 @@
-name: Publish NPM Package
+name: Publish Alpha Build
 
 on:
   workflow_dispatch:
