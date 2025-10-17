@@ -1,6 +1,9 @@
+.github
+node_modules
 scripts
 src
 .gitattributes
 .gitignore
+.npmignore
 pnpm-*.yaml
 tsconfig.json
