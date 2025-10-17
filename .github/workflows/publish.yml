@@ -8,7 +8,7 @@ permissions:
   packages: write
 
 jobs:
-  publish-dev:
+  publish-stable:
     runs-on: ubuntu-latest
 
     steps:
