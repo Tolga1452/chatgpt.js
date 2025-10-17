@@ -1,6 +1,6 @@
 {
   "name": "chatgpt.js",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Build ChatGPT Apps easily.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -36,5 +36,13 @@
     "@modelcontextprotocol/sdk": "^1.20.0",
     "esbuild": "^0.25.10",
     "express": "^5.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tolga1452/chatgpt.js.git"
+  },
+  "homepage": "https://github.com/Tolga1452/chatgpt.js#readme",
+  "bugs": {
+    "url": "https://github.com/Tolga1452/chatgpt.js/issues"
   }
 }
