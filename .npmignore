@@ -1,0 +1,6 @@
+scripts
+src
+.gitattributes
+.gitignore
+pnpm-*.yaml
+tsconfig.json

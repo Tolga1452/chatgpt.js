@@ -1,0 +1,40 @@
+{
+  "name": "chatgpt.js",
+  "version": "1.0.0-alpha.1",
+  "description": "Build ChatGPT Apps easily.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "exports": "node ./scripts/exports.js",
+    "build": "pnpm exports && tsc"
+  },
+  "keywords": [
+    "chatgpt.js",
+    "openai",
+    "chatgpt",
+    "app",
+    "application",
+    "sdk",
+    "npm",
+    "package",
+    "node",
+    "js",
+    "javascript",
+    "ts",
+    "typescript"
+  ],
+  "author": "Tolgchu",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2",
+    "zod": "^3.25.76"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "esbuild": "^0.25.10",
+    "express": "^5.1.0"
+  }
+}
