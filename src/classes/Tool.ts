@@ -110,13 +110,15 @@ export class Tool<InputSchema extends ZodRawShape = ZodRawShape, OutputSchema ex
         return this;
     };
 
-    public toMcp(): OpenAiMcpTool {
-        const tool: OpenAiMcpTool = {
+    public toMcp(): OpenAiMcpTool<InputSchema, OutputSchema> {
+        const tool: OpenAiMcpTool<InputSchema, OutputSchema> = {
             _meta: {}
         };
 
         if ('title' in this.data) tool.title = this.data.title;
         if ('description' in this.data) tool.description = this.data.description;
+        if ('inputSchema' in this.data) tool.inputSchema = this.data.inputSchema;
+        if ('outputSchema' in this.data) tool.outputSchema = this.data.outputSchema;
 
         if ('invocation' in this.data && this.data.invocation) {
             if ('invoking' in this.data.invocation) tool._meta!['openai/toolInvocation/invoking'] = this.data.invocation.invoking;

@@ -80,9 +80,11 @@ export interface OpenAiMcpToolMeta extends Record<string, unknown> {
     'openai/widgetAccessible'?: boolean;
 };
 
-export interface OpenAiMcpTool {
+export interface OpenAiMcpTool<InputSchema extends ZodRawShape = ZodRawShape, OutputSchema extends ZodRawShape = ZodRawShape> {
     title?: string;
     description?: string;
+    inputSchema?: InputSchema;
+    outputSchema?: OutputSchema;
     _meta?: OpenAiMcpToolMeta;
     annotations?: ToolAnnotations;
 };
