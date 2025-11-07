@@ -37,6 +37,7 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
+      - run: npm install -g npm@latest
 
       - name: Publish to npm
         env:
