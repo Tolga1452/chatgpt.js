@@ -5,7 +5,7 @@ on:
 
 permissions:
   contents: read
-  packages: write
+  id-token: write
 
 jobs:
   publish-alpha:
@@ -39,7 +39,4 @@ jobs:
       - run: pnpm build
 
       - name: Publish to npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: pnpm publish --tag alpha --access public --no-git-checks
+        run: npm publish --tag alpha --access public --provenance
