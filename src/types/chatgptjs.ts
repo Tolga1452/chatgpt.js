@@ -1,8 +1,8 @@
 import { ServerOptions } from '@modelcontextprotocol/sdk/server';
 import { McpServer, ToolCallback } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { Implementation, ToolAnnotations, ToolAnnotationsSchema } from '@modelcontextprotocol/sdk/types.js';
+import { Implementation, ToolAnnotations } from '@modelcontextprotocol/sdk/types.js';
 import { Express } from 'express';
-import { z, ZodRawShape } from 'zod';
+import { ZodRawShape } from 'zod';
 
 type KnownKeys<T> = {
     [P in keyof T as string extends P
@@ -14,7 +14,9 @@ type KnownKeys<T> = {
     : P]: T[P];
 };
 
-export type KnownToolAnnotationKey = keyof KnownKeys<z.infer<typeof ToolAnnotationsSchema>>;
+export type KnownToolAnnotationKey = keyof KnownKeys<ToolAnnotations>;
+
+export type ExtendedToolAnnotations = ToolAnnotations & Record<string, unknown>;
 
 export interface BaseAppOptions {
     mcpPath?: string;
@@ -52,7 +54,7 @@ export interface ToolData<InputSchema extends ZodRawShape = ZodRawShape, OutputS
     inputSchema?: InputSchema;
     outputSchema?: OutputSchema;
     outputWidget?: string;
-    annotations?: ToolAnnotations;
+    annotations?: ExtendedToolAnnotations;
     widgetAccessible?: boolean;
     callback: ToolCallback<InputSchema>;
 };
